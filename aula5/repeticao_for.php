@@ -1,3 +1,10 @@
+<style>
+.grid{
+display:
+
+}
+</style>
+
 <h2>Estrutura de repetição - for</h2>
 <p>
     Utilizada para repetir um conjunto de intruções por um determinado número de vezes.
@@ -10,17 +17,17 @@
     }
 </pre>
 
-<?php
-    for($contador = 1; $contador < 10; $contador++){
-    echo "Repetindo essa linha $contador x<br>";
-}
-?>    
-
 <br>
-<br>
+<pre>♡ tabuadinhas !!! cuti cuti iti malia ♡</pre>
 
-<?php
-    for($contador = 1; $contador < 10; $contador++){
-    echo "2 x $contador = <br>";
-}
-?>    
+<div class="grid">
+    <?php
+        for($tabuada=1; $tabuada <=10; $tabuada++){
+            echo "<div class='tabuada'>";
+             for($contador = 1; $contador < 10; $contador++){
+             echo "$tabuada x $contador = " . $tabuada*$contador .  "<br>";
+             }
+             echo "</div>";
+        }
+    ?>   
+</div>
