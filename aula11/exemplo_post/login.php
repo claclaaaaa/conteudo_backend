@@ -3,7 +3,7 @@
 <?php
     //se existe/foi enviada a variável do usuário
     if(isset($_POST["usuario"]))
-    //verfica se o usuário é igual a dmin e a senha igual a 123
+    //verfica se o usuário é igual a admin e a senha igual a 123
     if($_POST["user"] == "admin" && $_POST["senha"] == "123"){
         echo "válido - usuário logado";
     }else{
