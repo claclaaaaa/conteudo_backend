@@ -1,18 +1,21 @@
 <?php
 
 $host = "127.0.0.1";
-$user = "root"; 
+$user = "root";
 $password = "";
 $database = "db_catalogo_3infob";
-$port = 3306; 
+$port = 3306;
 
 //cria uma conexão com o mysql
-$conexao = new mysqli($host, $user, $password, $database, $port);
+$conexao = new mysqli($host, 
+                      $user, 
+                      $password,
+                      $database,
+                      $port);
 
-//verifica se existem erros na conexão
-if($conexao -> connect_error){
-    echo $conexao -> connect_error;
+//verifica se existe erros na conexão                      
+if($conexao->connect_error){
+    echo $conexao->connect_error;
     die();
 }
 
-?> 
