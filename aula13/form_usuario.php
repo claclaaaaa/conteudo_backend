@@ -14,10 +14,10 @@ require_once "usuario/consultar_por_id.php";
     <h1>Cadastro de usuário</h1>
     <hr>
 
-    <form action="<?php echo isset($uduario) ? 
-     "usuario/atualizar.php" :
-     "usuario/inserir.php" ; ?>"
-      method="post">
+    <form action="<?php echo isset($usuario) ? 
+     "usuario/atualizar.php":
+     "usuario/inserir.php"; ?>"
+      method="post" enctype="multipart/form-data">
         
         <input type="hidden" name="idusuario" value="<?php echo $usuario->idusuario ?? "" ;?>" ><br>
 
@@ -29,6 +29,9 @@ require_once "usuario/consultar_por_id.php";
 
         <label>Senha</label><br>
         <input type="password" name="senha"><br>
+
+        <label>Foto</label><br>
+        <input type="file" name="foto"><br>
         <br>
         <button type="submit">Inserir</button>
         
