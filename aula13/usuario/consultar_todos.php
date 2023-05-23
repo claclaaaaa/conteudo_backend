@@ -1,6 +1,6 @@
 <?php
    //importa o arquivo de conexão
-   require_once "conexao.php";
+   require_once "../banco/conexao.php";
 
    //cria uma variável com um comando SQL
    $SQL = "SELECT * FROM usuario";
