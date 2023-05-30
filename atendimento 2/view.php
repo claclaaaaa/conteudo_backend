@@ -9,5 +9,6 @@ move_uploaded_file($foto["tmp_name"], $foto['name']);
 $nome_foto = $foto['name'];
 
 echo "<img src='$nome_foto' height='100px' >";
+// lalala
 
 ?>
