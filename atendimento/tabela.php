@@ -1,4 +1,5 @@
 <?php include "dados.php";
+// um dois três 
 
 if(isset($_GET['id'])){
     $id = $_GET['id'];
