@@ -1,6 +1,7 @@
 <?php 
 
 require_once "../banco/conexao.php";
+
 if(isset($_POST['login']) and isset ($_POST['senha'])){
     $login = $_POST['login'];
     $senha = $_POST['senha'];
@@ -25,17 +26,17 @@ if(isset($_POST['login']) and isset ($_POST['senha'])){
     $usuario = $resultados->fetch_object();
 
     //if($usuario != NULL) ----> "diferente"
-    if($usuario and password_verify($senha, $usuario->senha)){
-        
-        session_start();
-        $_SESSION['usuario'] = $usuario->nome;
-        header("Location: ../noticia/index.php");
-        die();
-        
+    if($usuario != NULL){
+        if(password_verify($senha, $usuario->senha)){
+            session_start();
+            $_SESSION['usuario'] = $usuario->nome;
+            header("Location: ../noticia/index.php");
+        }else{
+            $erro_login = "senha incorreta";
+        }
+    }else{
+        $erro_login = "não existe  usuário com o login informado";
     }
-    
-    header("Location: formulario.php");
-    
 }
 
 ?>
