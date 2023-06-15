@@ -1,13 +1,13 @@
 <?php
-   
    //importa o arquivo de conexão
    require_once "../banco/conexao.php";
 
    $id = $_POST['idcategoria'];
    $nome = $_POST['nome'];
    $descricao = $_POST['descricao'];
+   $cor = $_POST['cor'];
    $ativo = $_POST['ativo'];
-   $cor = password_hash($_POST['cor'], PASSWORD_BCRYPT);
+   //$categoria = password_hash($_POST['categoria'], PASSWORD_BCRYPT);
 
    //cria uma variável com um comando SQL
    $SQL = "UPDATE `categoria` SET `nome`= ?, `descricao`= ?, `cor`= ?, `ativo`= ? WHERE  `idcategoria`= ? ;";

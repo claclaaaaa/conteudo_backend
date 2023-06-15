@@ -5,11 +5,11 @@
 
 <div class="container">
 
-    <h1>Categorias</h1>
+    <h1>♡ Categorias ♡</h1>
     <hr>
 
     <div class="text-end">
-    <a href="formulario.php" class="btn btn-success">Inserir Novo</a>
+    <a href="formulario.php" class="btn btn-success">Inserir Novo</a> 
     </div>
 
     <table class="table" id="tabela_dados">
@@ -39,7 +39,7 @@
         Excluir
       </a>
 
-      <a href="formulario.php?id=<?= $categoria->idcategoria ?>" class="btn btn-primary">
+      <a href="atualizar.php?id=<?= $categoria->idcategoria ?>" class="btn btn-primary">
       <i class="fa-solid fa-pen-to-square"></i>
         Atualizar
       </a>
