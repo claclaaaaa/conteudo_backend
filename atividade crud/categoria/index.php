@@ -1,12 +1,11 @@
 <?php 
   require "consultar_todos.php";
   require_once "../template/cabecalho.php";
-  require_once "../template/menu_restrito.php";
 ?>
 
 <div class="container">
 
-    <h1>Usuários</h1>
+    <h1>Categorias</h1>
     <hr>
 
     <div class="text-end">
@@ -20,6 +19,7 @@
       <th scope="col">Descrição</th>
       <th scope="col">Cor</th>
       <th scope="col">Ativo</th>
+      <th scope="col">Foto</th>
       <th scope="col">Ação</th>
 
 
@@ -30,8 +30,10 @@
     <tr>
       <td><?= $categoria->nome ?></td>
       <td><?= $categoria->descricao ?></td>
+      <td><?= $categoria->cor ?></td>
+      <td><?= $categoria->ativo ?></td>
       <td><img src="../uploads/<?= $categoria->foto ?>" height="45px"></td>
-      <td class="text-end" width="25%">
+      <td class="text-end" width="18%">
         <a href="excluir.php?id=<?= $categoria->idcategoria ?>" class="btn btn-danger">
         <i class="fa-solid fa-trash"></i> 
         Excluir
