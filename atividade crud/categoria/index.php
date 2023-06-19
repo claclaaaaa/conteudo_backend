@@ -39,7 +39,7 @@
         Excluir
       </a>
 
-      <a href="atualizar.php?id=<?= $categoria->idcategoria ?>" class="btn btn-primary">
+      <a href="formulario.php?id=<?= $categoria->idcategoria ?>" class="btn btn-primary">
       <i class="fa-solid fa-pen-to-square"></i>
         Atualizar
       </a>

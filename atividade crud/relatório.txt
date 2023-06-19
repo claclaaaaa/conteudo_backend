@@ -1,0 +1,53 @@
+relatório (rascunho) 
+- comecei abrindo o xampp e ligando o apache e o my sql
+- abri o heidi sql e criei uma tabela chamada "categorias", com 5 colunas: idcategoria (chave primária, int, autoincremento), nome (text), descrição (text), cor (text) e ativo (int); não defini nenhum tamanho.
+
+- abri o visual studio code
+- criei a pasta "atividade crud"
+
+- dentro dela, criei a pasta "banco"
+- em "banco", criei o arquivo "conexao.php", no qual abri as tags php e defini as variáveis host, user, password, database e port, de modo a conectar o arquivo ao banco de dados já criado, e depois usei uma estrutura if para verificar se haviam erros.
+
+- depois, dentro da pasta da atividade crud, criei mais uma pasta chamada "categoria"; em categoria:
+- criei o arquivo "faz_upload.php":  com uma estrutura if/else e usando a variável $_FILES, defino onde está o upload da imagem por meio da variável $origem e uso a $destino para localizar para onde o arquivo será movido (para uma outra pasta dentro de "atividade crud", chamada "uploads", cuja função é apenas armazenar as fotos inseridas), usando a tag "move_uploaded_file"; crio um novo nome para a imagem (único, cheio de letrinhas e muitos números e etc) por meio da variável $nome_foto, que é o que usarei na definição dos endereços (pra mover da origem pro destino e etc)
+- no else da estrutura:
+$nome_foto = "sem_foto.jpg";
+o "sem_foto.jpg" é uma imagem de usuário padrão (carinha, ombros, cinza, essas coisas), que será usada caso não tenha nenhuma foto inserida. 
+ 
+- criei os arquivos "inserir.php", "atualizar.php" e "excluir.php", e nos três usei a linha require_once "../banco/conexao.php" para incluir o arquivo conexão, que liga os arquivos ao banco de dados
+- em inserir.php: 
+- usei uma estrutura if com isset e $_POST pra garantir que os campos estivessem criados, e usei o require_once pra incluir "faz_upload.php", para podermos inserir a foto também 
+- defini as 5 variáveis com os nomes das colunas do banco de dados usando $_POST, assim: 
+   $nome = $_POST['nome'];
+   $descricao = $_POST['descricao'];
+   $cor = $_POST['cor'];
+   $ativo = $_POST['ativo'];
+- criei a variável $SQL, que aqui fará a função de inserir os dados, com o comando  
+" INSERT INTO `categoria` (`nome`, `descricao`, `cor`, `ativo`, foto) VALUES (?, ?, ?, ?, ?); "
+- preparei o comando para ser executado (essa etapa é importante pela questão da segurança do cógido)
+- usando bind_param, fiz a vinculação dos parâmetros definidos pelos pontos de interrogação 
+- executei (finalmente) o comando 
+- fora da estrutura if, usei "header("Location: index.php")", para voltar para o index (que a essa altura ainda não foi criado, mas paciência).
+
+- em atualizar.php:
+- basicamente a mesma coisa que o inserir, mas há também a coluna id nos campos 
+- o comando usado na $SQL dessa vez é " UPDATE `categoria` SET `nome`= ?, `descricao`= ?, `cor`= ?, `ativo`= ? WHERE  `idcategoria`= ? ; "
+que é o que vai atualizar os dados escolhidos
+- finalizo o arquivo novamente com " header("Location: index.php") "
+
+- em excluir.php:
+- usando $_GET, definimos o id escolhido
+- o comando $SQL é " DELETE FROM `categoria` WHERE  `idcategoria`= ? ; "
+- esse comando irá apagar o registro escolhido por meio do id 
+- volto, novamente, para o index. 
+
+- dentro da pasta "categoria", crio o arquivo "formulario.php"
+- nele, crio um formulário html com método post
+- no form action, insiro as tags php e coloco os arquivos atualizar e inserir 
+- 
+
+
+
+
+
+

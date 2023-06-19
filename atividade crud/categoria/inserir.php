@@ -4,7 +4,7 @@
 
    if(isset($_POST['nome'])){
 
-      //faz upload da foto do usuário
+      //faz upload da foto escolhida
       require_once "faz_upload.php";
 
    $nome = $_POST['nome'];
