@@ -16,7 +16,7 @@
 
    //pega todas as linhas do resultado da consulta
    $categorias = [];
-   while ($categoria = $resultados->fetch_object()){
-      $categorias[] = $categoria; 
-   }
+   //while ($categoria = $resultados->fetch_object()){
+    //  $categorias[] = $categoria; 
+   //}
    ?>

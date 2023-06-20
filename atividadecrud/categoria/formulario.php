@@ -11,19 +11,19 @@ require_once "../template/cabecalho.php";
      "inserir.php"; ?>"
       method="post" enctype="multipart/form-data">
         
-        <input type="hidden" name="idcategoria" value="<?php echo $categoria->idcategoria ?? "" ;?>" ><br>
+        <input type="hidden" name="idcategoria" value="<?php echo isset($categoria) ? $categoria->idcategoria ?? "" ;?>" ><br>
 
         <label class="form-label">Nome</label><br>
-        <input class="form-control" type="text" name="nome" value="<?php echo $categoria->nome ?? "" ;?>" ><br>
+        <input class="form-control" type="text" name="nome" value="<?php echo isset($categoria) ? $categoria->nome ?? "" ;?>" ><br>
 
         <label class="form-label">Descrição</label><br>
-        <textarea class="form-control" name="descricao"><?php echo $categoria->descricao ?? "" ;?></textarea><br>
+        <textarea class="form-control" name="descricao" value="<?php echo isset($categoria) ? $categoria->descricao ?? "" ;?></textarea><br>
 
         <label class="form-label">Cor</label><br>
-        <input class="form-control" type="text" name="cor" value="<?php echo $categoria->cor ?? "" ;?>" ><br>
+        <input class="form-control" type="text" name="cor" value="<?php echo isset($categoria) ? $categoria->cor ?? "" ;?>" ><br>
 
         <label class="form-label">Ativo</label><br>
-        <input class="form-control" type="text" name="ativo" value="<?php echo $categoria->ativo ?? "" ;?>" ><br>
+        <input class="form-control" type="text" name="ativo" value="<?php echo isset($categoria) ? $categoria->ativo ?? "" ;?>" ><br>
 
         <label class="form-label">Foto</label><br>
         <input class="form-control" type="file" name="foto"><br>
