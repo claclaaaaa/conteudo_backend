@@ -23,7 +23,7 @@
    $resultados = $comando->get_result(); 
 
    //pega a primeira linha do resultado da consulta
-   $usuario = $resultados->fetch_object();
+   $categoria = $resultados->fetch_object();
 
 
 }

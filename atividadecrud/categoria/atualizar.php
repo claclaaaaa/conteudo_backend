@@ -15,7 +15,7 @@
    $comando = $conexao->prepare($SQL);
 
    //faz a vinculação dos parâmetros ?, ?, ?
-   $comando->bind_param("ssssi", $nome, $descricao, $cor, $ativo, $id);
+   $comando->bind_param("sssii", $nome, $descricao, $cor, $ativo, $id);
 
    //executa o comando
    $comando->execute();
